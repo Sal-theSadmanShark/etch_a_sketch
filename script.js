@@ -1,15 +1,12 @@
 //element creation
 const head = document.createElement(`header`);
-//const main = document.createElement(`main`);
 const title = document.createElement('h1');
 const des = document.createElement(`section`);
 const button = document.createElement(`button`);
 const p = document.createElement(`p`);
 
-
 //appending children
 document.body.appendChild(head);
-//document.body.appendChild(main);
 head.appendChild(title);
 head.appendChild(des);
 head.appendChild(button);
@@ -17,17 +14,11 @@ head.appendChild(p);
 
 //attributes and content
 head.setAttribute('id','header');
-//main.setAttribute(`id`,`main`);
-
 des.textContent = `  hover over the tiles to change the color and draw stuff ! Click tiles to remove color  `;
 title.textContent = `Etch A Sketch`;
 button.textContent = `ooh click me click me`
 
-
-
-
-
-
+//functions
 function setGrids () {
  let gridList = document.querySelectorAll("div");
  gridList.forEach(function (e) {
@@ -50,8 +41,6 @@ function setGrids () {
  return 0;
 }
 
-
-
 function grids (count) {
 	let gridsArr = []
 	const main = document.createElement(`main`);
@@ -69,6 +58,7 @@ function grids (count) {
 	
 	return 0;
 }
+
 grids(16);
 
 p.addEventListener(`click`,function (){
@@ -77,11 +67,3 @@ p.addEventListener(`click`,function (){
 	grids(input);
 
 });
-
-
-/*
-window.addEventListener('keydown',function (key){
-	console.log(e);
-	gridList.forEach(function (e) {
-		e.style.backgroundColor = `red`;
-})};*/

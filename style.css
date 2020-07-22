@@ -60,14 +60,9 @@ body {
     padding: 7px;
     background-color: rgb(14, 0, 24);
     display: grid;
-   /* grid-template-columns: repeat(16,auto);
-   grid-template-rows: repeat(16,auto); */
-  /*  grid-column-gap: 1vw;
-  grid-row-gap: 1vh; */
-}
+} 
 .gridstyle {
 	border-radius: 1px;
-    /*border: 1px solid white;*/
     background-color: rgb(228, 62, 62);   
 }
 .hoverBlack{
