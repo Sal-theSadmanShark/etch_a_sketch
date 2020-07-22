@@ -3,7 +3,7 @@ html {
     border: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #12ccff;
+    background-color: #cfc6f5;
 }
 body {
 	margin: 0;
@@ -17,7 +17,7 @@ body {
 	display: flex;
 	justify-content: space-between;
     text-align: center;
-    color: rgb(0, 128, 6);
+    color: rgb(0, 37, 37);
     font-family:  'Indie Flower', cursive;
     margin-bottom: 10px;
 }
@@ -26,6 +26,7 @@ body {
 	align-self: flex-end;
 	padding-right: 10px;
 	font-size: 16px;
+	color: rgb(32, 9, 54);
 }
 #header button{
 	-ms-align-self: flex-end;
@@ -34,7 +35,7 @@ body {
 	outline: none;
 	border: none;
 	background-color: transparent;
-	color: blue;
+	color: rgba(0, 0, 255, 0.76);
 	font-family: "Lucida Console", Monaco , monospace;
 }
 #header button:hover{
@@ -57,7 +58,7 @@ body {
 	width: 920px;
 	height: 460px;
     padding: 7px;
-    background-color: bisque;
+    background-color: rgb(14, 0, 24);
     display: grid;
    /* grid-template-columns: repeat(16,auto);
    grid-template-rows: repeat(16,auto); */
@@ -67,7 +68,7 @@ body {
 .gridstyle {
 	border-radius: 1px;
     /*border: 1px solid white;*/
-    background-color: red;   
+    background-color: rgb(228, 62, 62);   
 }
 .hoverBlack{
 	background-color: black;

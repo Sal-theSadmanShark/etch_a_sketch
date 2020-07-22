@@ -19,7 +19,7 @@ head.appendChild(p);
 head.setAttribute('id','header');
 //main.setAttribute(`id`,`main`);
 
-des.textContent = `  hover over the grids to change the color and draw stuff !  `;
+des.textContent = `  hover over the tiles to change the color and draw stuff ! Click tiles to remove color  `;
 title.textContent = `Etch A Sketch`;
 button.textContent = `ooh click me click me`
 
@@ -64,7 +64,7 @@ function grids (count) {
 	gridsArr.forEach(e => main.appendChild(e));
 	setGrids();
 	main.style.cssText = `grid-template-columns: repeat(${count},auto); grid-template-rows: repeat(${count},auto);  grid-column-gap:${72/count}px;
-  	grid-row-gap: ${72/count}px; border:${18/count}px solid bisque`;
+  	grid-row-gap: ${72 / count}px; border:${18 / count}px solid rgb(14, 0, 24);`;
   	p.innerHTML = `grid size : ${count} x ${count} `;
 	
 	return 0;
