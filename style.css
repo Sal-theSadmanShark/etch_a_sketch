@@ -38,6 +38,15 @@ body {
 	color: rgba(0, 0, 255, 0.76);
 	font-family: "Lucida Console", Monaco , monospace;
 }
+#header i{
+	font-size: 1.5rem;
+	padding: 10px;
+	-ms-align-self: flex-end;
+	align-self: flex-end;
+}
+#header i:hover{
+	transform: scale(1.1);
+}
 #header button:hover{
 	transform: scale(1.1);
 	color: dodgerblue;
@@ -67,4 +76,7 @@ body {
 }
 .hoverBlack{
 	background-color: black;
+}
+.hoverBlue{
+	background-color: blue;
 }

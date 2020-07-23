@@ -4,6 +4,14 @@ const title = document.createElement('h1');
 const des = document.createElement(`section`);
 const button = document.createElement(`button`);
 const p = document.createElement(`p`);
+const i = document.createElement(`i`);
+
+//changing brush color
+var brushcolor = `black`;
+i.onclick = function () {
+	if (brushcolor === `black`) { brushcolor = `blue`; this.style.color = `blue`; return 0; }
+	if (brushcolor === `blue`) { brushcolor = `black`; this.style.color = `black`; return 0; }
+}
 
 //click events
 var brush = `click tiles to stop drawing`; 
@@ -17,9 +25,13 @@ head.appendChild(title);
 head.appendChild(des);
 head.appendChild(button);
 head.appendChild(p);
+head.insertBefore(i, p);
 
 //attributes and content
 head.setAttribute('id','header');
+i.classList.add(`fas`);
+i.classList.add(`fa-pencil-alt`);
+i.title = `change brush color`
 des.textContent = `  hover over the tiles to change the color and draw stuff ! ${brush}  `;
 title.textContent = `Etch A Sketch`;
 button.textContent = `ooh click me click me`
@@ -31,24 +43,29 @@ function description () {
 	return 0;
 }
 
+
+function gridColor() {
+	if (brushcolor === `black`) return `hoverBlack`;
+	if (brushcolor === `blue`) return `hoverBlue`;
+	return 0;
+}
+
 function setGrids () {
  let gridList = document.querySelectorAll("div");
  gridList.forEach(function (e) {
      e.classList.add('gridstyle');
-     //console.log(e);
     e.addEventListener('mouseover', function(element) {
     		if (brushState===`draw`) {
-    			console.log(element);
-    			e.classList.add(`hoverBlack`);
+    			e.classList.add(gridColor());
     		}	
     });
     e.addEventListener('click', function(element) {
-    			console.log(element);
-    			e.classList.remove(`hoverBlack`);
+    			e.classList.remove(gridColor());
     });
  }); 
+ //clearing button
  button.onclick = function () { 
- 	gridList.forEach( function (e) { e.classList.remove(`hoverBlack`) })
+ 	gridList.forEach( function (e) { e.classList.remove(`hoverBlack`,`hoverBlue`) })
  	this.textContent = `i clear the sketch `;
  	return 0;	
  };
