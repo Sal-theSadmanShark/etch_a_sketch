@@ -5,6 +5,12 @@ const des = document.createElement(`section`);
 const button = document.createElement(`button`);
 const p = document.createElement(`p`);
 
+//click events
+var brush = `click tiles to stop drawing`; 
+var brushState = `draw`;
+window.onclick = function () { brushState=`click`; description(); return 0; };
+window.ondblclick = function () { brushState=`draw`; description (); return 0; }; 
+
 //appending children
 document.body.appendChild(head);
 head.appendChild(title);
@@ -14,19 +20,27 @@ head.appendChild(p);
 
 //attributes and content
 head.setAttribute('id','header');
-des.textContent = `  hover over the tiles to change the color and draw stuff ! Click tiles to remove color  `;
+des.textContent = `  hover over the tiles to change the color and draw stuff ! ${brush}  `;
 title.textContent = `Etch A Sketch`;
 button.textContent = `ooh click me click me`
 
 //functions
+function description () {
+	brushState===`click`? brush = `double-click to start drawing` : brush = `click tiles to stop drawing`;
+	des.textContent = `  hover over the tiles to change the color and draw stuff ! ${brush}  `;
+	return 0;
+}
+
 function setGrids () {
  let gridList = document.querySelectorAll("div");
  gridList.forEach(function (e) {
      e.classList.add('gridstyle');
      //console.log(e);
     e.addEventListener('mouseover', function(element) {
+    		if (brushState===`draw`) {
     			console.log(element);
     			e.classList.add(`hoverBlack`);
+    		}	
     });
     e.addEventListener('click', function(element) {
     			console.log(element);
@@ -61,9 +75,11 @@ function grids (count) {
 
 grids(16);
 
+//changing grids
 p.addEventListener(`click`,function (){
-	let input = window.prompt(`please input new grid size`);
+	let input = window.prompt(`please input new grid size `);
+	if (!(input>0) || input > 999 ) { window.alert(`error the input is out of range`); return 0;}
 	document.body.removeChild(main);
 	grids(input);
-
+	return 0;
 });
